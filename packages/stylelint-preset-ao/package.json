@@ -1,0 +1,26 @@
+{
+  "name": "stylelint-preset-ao",
+  "version": "0.0.1-rc.1",
+  "description": "AO stylelint preset",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stylelint",
+    "stylelintpreset",
+    "ao",
+    "scss",
+    "css"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.7.1",
+    "eslint-config-ao": "^0.0.1-rc.1"
+  },
+  "peerDependencies": {
+    "stylelint": "^8.0.0",
+    "stylelint-order": "^0.6.0"
+  }
+}
