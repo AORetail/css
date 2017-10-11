@@ -1,8 +1,12 @@
 {
   "name": "stylelint-preset-ao",
-  "version": "0.0.1-rc.1",
+  "version": "0.0.1-rc.2",
   "description": "AO stylelint preset",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "rules/"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +17,10 @@
     "scss",
     "css"
   ],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AORetail/css.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "eslint": "^4.7.1",
