@@ -2,52 +2,81 @@
 
 > Our view on SCSS formatting.
 
+
 ## Syntax
 
-Always the `.scss` syntax.
+Here at AO we utilise the `.scss` syntax to write SASS.
+
 
 ## Formatting
 
-* Use tabs for indentation.
-* Use kebab-case for selectors.
-* Avoid using IDs as selectors.
-* Declare all selectors on a single line.
-* Insert a space before the opening brace ` {` in rule declarations.
-* When declaring properties put a space after, but not before, the `: ` character.
-* Closing braces `}` of rule declarations should be on a new line.
-* Insert blank lines between rule declarations
+- Use tabs for indentation, do not use spaces.
+- For selectors:
+	- Use kebab-case.
+	- BEM syntax is allowed.
+	- Never use camelCase for class selectors.
+	- Avoid using IDs as selectors.
+- If possible, add classes to elements.
+	- Try not to target specific elements e.g. `a`, `p`, `li` etc.
+- Specifics:
+	- Insert a space before the opening brace ` {` in rule declarations.
+	- Closing braces `}` of rule declarations should be on a new line.
+	- When declaring properties, put a space after but not before the `: ` character.
+	- Insert blank lines between rule declarations.
 
-## Selector Pattern
-
-Both classname and ID selectors should use a lowercase hyphenated pattern.
 
 ### Classname Selectors
 
 ```scss
-.some-class-name {
-	/* ... */
+.class-selector {
+	// properties
+}
+
+.parent-class__with-child-class--and-modifier {
+	// properties
 }
 ```
+
 
 ### ID Selectors
 
 Although we discourage the use of IDs as selectors, if absolutely necessary they should be declared using the same pattern as classnames.
 
 ```scss
-#some-id {
-	/* ... */
+#id-selector {
+	// properties
 }
 ```
+
+
+## Nested Selectors
+
+**Selectors should not be nested more than three levels deep!**
+
+```scss
+.parent {
+	.child {
+		.gran-child {
+			// thats enough ;)
+
+			&::before {
+				// pseudo elements don't count towards nesting depth
+			}
+		}
+	}
+}
+```
+
 
 ## @Extends
 
 Placeholders should be extended before any property declarations.
 
 ```scss
-/* some selector */ {
+.class-selector {
 	@extends %header-main;
 
-	color: #44444;
+	color: #444444;
 }
 ```
 
@@ -58,14 +87,14 @@ Properties are ordered both by groups and in a certain order within each group.
 See below for a comprehensive list. Any properties not listed should be declared at the bottom.
 
 ```scss
-/* some selector  */ {
+.class-selector {
+	// pseudo specific
+	content: '';
 
-	/* Display */
-
+	// display
 	display: block | flex | grid | inline | inline-block | inline-flex | inline-grid | table | table-cell;
 
-	/* Flex parent */
-
+	// flex parent
 	flex-direction: column;
 	flex-flow: column;
 	flex-wrap: wrap;
@@ -73,8 +102,7 @@ See below for a comprehensive list. Any properties not listed should be declared
 	align-items: center;
 	align-content: center;
 
-	/* Flex children */
-
+	// flex children
 	order: 1;
 	flex-grow: 1;
 	flex-shrink: 0;
@@ -82,8 +110,7 @@ See below for a comprehensive list. Any properties not listed should be declared
 	flex: 1 0 auto;
 	align-self: center;
 
-	/* Grid parent */
-
+	// grid parent
 	grid-template-columns: 50px 50px 50px 50px;
 	grid-template-rows: auto;
 	grid-template-areas:
@@ -109,8 +136,7 @@ See below for a comprehensive list. Any properties not listed should be declared
 		[row2-start] 'footer footer footer' 25px [row2-end]
 		/ auto 50px auto;
 
-	/* Grid children */
-
+	// grid children
 	grid-column-start: 2;
 	grid-column-end: five;
 	grid-row-start: row1-start;
@@ -121,12 +147,7 @@ See below for a comprehensive list. Any properties not listed should be declared
 	justify-self: start;
 	align-self: start;
 
-	/* Pseudo Specific */
-
-	content: ;
-
-	/* Positioning declarations */
-
+	// positioning declarations
 	position: absolute | fixed | relative | static | sticky;
 	top: 50%;
 	right: 50%;
@@ -137,13 +158,11 @@ See below for a comprehensive list. Any properties not listed should be declared
 	transform: translate(-50%);
 	vertical-align: middle;
 
-	/* Floats */
-
+	// floats
 	float: left | right | none;
 	clear: left | right | both | none;
 
-	/* Box model declarations */
-
+	// box model declarations
 	box-sizing: border-box;
 
 	width: 600px;
@@ -154,13 +173,13 @@ See below for a comprehensive list. Any properties not listed should be declared
 	min-height: 50%;
 	max-height: 100%;
 
-	margin: 10px 15px 20px 25px; /* top | right | bottom | left */
+	margin: 10px 15px 20px 25px; // top | right | bottom | left
 	margin-top: 10px;
 	margin-right: 15px;
 	margin-bottom: 20px;
 	margin-left: 25px;
 
-	padding: 10px 15px 20px 25px; /* top | right | bottom | left */
+	padding: 10px 15px 20px 25px; // top | right | bottom | left
 	padding-top: 10px;
 	padding-right: 15px;
 	padding-bottom: 20px;
@@ -172,13 +191,12 @@ See below for a comprehensive list. Any properties not listed should be declared
 	border-bottom: 1px solid #333333;
 	border-left: 1px solid #333333;
 
-	/* Typographical */
-
+	// typographical
 	direction: ltr;
 
-	line-height: 1.5; /* No units */
+	line-height: 1.5; // no units
 
-	font: 16px/3 serif bold italic; /* size/line-height | family | weight | style */
+	font: 16px/3 serif bold italic; // size/line-height | family | weight | style
 	font-size: 1rem;
 	font-family: sans-serif;
 	font-weight: normal;
@@ -190,9 +208,8 @@ See below for a comprehensive list. Any properties not listed should be declared
 
 	word-wrap: break-word;
 
-	/* Aesthetics */
-
-	background: #000000; /* color | image | position | repeat | size */
+	// aesthetics
+	background: #000000; // color | image | position | repeat | size
 	background-color: #000000;
 	background-image: url('../img/nicholas-cage.jpg');
 	background-image: image-set(url('../img/nicholas-cage.jpg') 1x, url('../img/nicholas-cage_2x.jpg') 2x);
@@ -202,7 +219,7 @@ See below for a comprehensive list. Any properties not listed should be declared
 
 	color: #ffffff;
 
-	border-radius: 5px 5px 5px 5px; /* top right | bottom right | bottom left | top left */
+	border-radius: 5px 5px 5px 5px; // top right | bottom right | bottom left | top left
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
@@ -210,7 +227,7 @@ See below for a comprehensive list. Any properties not listed should be declared
 
 	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
 
-	list-style: lower-roman outside url(../img/shape.png); /* type | position | image */
+	list-style: lower-roman outside url(../img/shape.png); // type | position | image
 	list-style-type: lower-roman;
 	list-style-position: outside;
 	list-style-image: url(../img/shape.png);
@@ -223,8 +240,7 @@ See below for a comprehensive list. Any properties not listed should be declared
 	visibility: visible;
 	object-fit: cover;
 
-	/* Other */
-
+	// other
 	overflow: auto;
 	overflow-x: auto;
 	overflow-y: auto;
@@ -232,89 +248,61 @@ See below for a comprehensive list. Any properties not listed should be declared
 	cursor: pointer;
 	pointer-events: none;
 
-	/*
-	All undocumented properties live here.
-	*/
-
+	// all undocumented properties live here
 	&:hover {
-		/* Declarations */
+		// properties
 	}
 
 	&:focus {
-		/* Declarations */
+		// properties
 	}
 
 	&:active {
-		/* Declarations */
+		// properties
 	}
 
 	&:visited {
-		/* Declarations */
+		// properties
 	}
 
 	&:checked {
-		/* Declarations */
+		// properties
 	}
 
 	&:first-child {
-		/* Declarations */
+		// properties
 	}
 
 	&:first-of-type {
-		/* Declarations */
+		// properties
 	}
 
 	&:last-child {
-		/* Declarations */
+		// properties
 	}
 
 	&:last-of-type {
-		/* Declarations */
+		// properties
 	}
 
 	&:nth-child(4n+1) {
-		/* Declarations */
+		// properties
 	}
 
 	&:nth-of-type(4n+1) {
-		/* Declarations */
+		// properties
 	}
 
 	&::before {
-		content: ;
+		// properties
 	}
 
 	&::after {
-		content: ;
-	}
-
-}
-```
-
-## Nested Selectors
-
-**Selectors should not be nested more than three levels deep!**
-
-```scss
-.some-section {
-	.content-container {
-		a {
-			// Thats enough :-)
-
-			&::before {
-				// Although this OK
-			}
-		}
+		// properties
 	}
 }
 ```
 
-## Class Grouping (HTML)
+## Property rules
 
-Although not strictly a CSS concern, we thought itd be apt to highlight the grouping of classes in our HTML.
-
-If using a common class that has modifiers, within the `class` attribute, wrap the classes using `[]` notation.
-
-```html
-<a href="#hello-world" class="[ button green stacked ] unrelated-class">Click Here</a>
-```
+- Hex colours should be at least 6 digits long and use lowercase letters.
