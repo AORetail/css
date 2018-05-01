@@ -1,6 +1,5 @@
 module.exports = {
-	'order/order': [
-		{
+	'order/order': [{
 			type: 'at-rule',
 			name: 'extend'
 		},
@@ -22,12 +21,13 @@ module.exports = {
 	],
 	'order/properties-order': [
 		[
+			'content',
 			'display',
 			{
 				order: 'strict',
 				properties: [
-					'flex-direction',
 					'flex-flow',
+					'flex-direction',
 					'flex-wrap',
 					'justify-content',
 					'align-items',
@@ -79,7 +79,6 @@ module.exports = {
 					'align-self'
 				]
 			},
-			'content',
 			{
 				order: 'strict',
 				properties: [
