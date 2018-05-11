@@ -5,6 +5,9 @@ module.exports = {
 			except: [
 				'first-nested',
 				'blockless-after-blockless'
+			],
+			ignore: [
+				'after-comment'
 			]
 		}
 	],
