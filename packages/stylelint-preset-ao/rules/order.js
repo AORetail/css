@@ -1,6 +1,5 @@
 module.exports = {
-	'order/order': [
-		{
+	'order/order': [{
 			type: 'at-rule',
 			name: 'extend'
 		},
@@ -22,64 +21,71 @@ module.exports = {
 	],
 	'order/properties-order': [
 		[
-			'display',
 			{
 				order: 'strict',
 				properties: [
-					'flex-direction',
-					'flex-flow',
-					'flex-wrap',
-					'justify-content',
-					'align-items',
-					'align-content'
+					'content',
 				]
 			},
 			{
 				order: 'strict',
 				properties: [
-					'order',
+					'display',
+				]
+			},
+			{
+				order: 'strict',
+				properties: [
+					'flex-flow',
+					'flex-direction',
+					'flex-wrap',
+					'flex',
 					'flex-grow',
 					'flex-shrink',
 					'flex-basis',
-					'flex',
-					'align-self'
 				]
 			},
 			{
 				order: 'strict',
 				properties: [
+					'grid',
+					'grid-template',
 					'grid-template-columns',
 					'grid-template-rows',
 					'grid-template-areas',
-					'grid-template',
+					'grid-gap',
 					'grid-column-gap',
 					'grid-row-gap',
-					'grid-gap',
-					'justify-items',
-					'justify-content',
-					'align-items',
-					'align-content',
 					'grid-auto-columns',
 					'grid-auto-rows',
 					'grid-auto-flow',
-					'grid'
+					'grid-area',
+					'grid-column',
+					'grid-column-start',
+					'grid-column-end',
+					'grid-row',
+					'grid-row-start',
+					'grid-row-end',
 				]
 			},
 			{
 				order: 'strict',
 				properties: [
-					'grid-column-start',
-					'grid-column-end',
-					'grid-row-start',
-					'grid-row-end',
-					'grid-column',
-					'grid-row',
-					'grid-area',
-					'justify-self',
-					'align-self'
+					'justify-content',
+					'justify-items',
+					'align-content',
+					'align-items',
 				]
 			},
-			'content',
+			{
+				order: 'strict',
+				properties: [
+					'justify-self',
+					'align-self',
+					'place-self',
+					'order',
+				]
+			},
 			{
 				order: 'strict',
 				properties: [
@@ -89,58 +95,105 @@ module.exports = {
 					'bottom',
 					'left',
 					'z-index',
+				]
+			},
+			{
+				order: 'strict',
+				properties: [
 					'transform',
-					'vertical-align'
+					'vertical-align',
 				]
 			},
 			{
 				order: 'strict',
 				properties: [
 					'float',
-					'clear'
+					'clear',
 				]
 			},
 			{
 				order: 'strict',
 				properties: [
 					'box-sizing',
+				]
+			},
+			{
+				order: 'strict',
+				properties: [
 					'width',
 					'min-width',
 					'max-width',
+				]
+			},
+			{
+				order: 'strict',
+				properties: [
 					'height',
 					'min-height',
 					'max-height',
+				]
+			},
+			{
+				order: 'strict',
+				properties: [
 					'margin',
 					'margin-top',
 					'margin-right',
 					'margin-bottom',
 					'margin-left',
+				]
+			},
+			{
+				order: 'strict',
+				properties: [
 					'padding',
 					'padding-top',
 					'padding-right',
 					'padding-bottom',
 					'padding-left',
+				]
+			},
+			{
+				order: 'strict',
+				properties: [
 					'border',
 					'border-top',
 					'border-right',
 					'border-bottom',
-					'border-left'
+					'border-left',
+					'border-radius',
+					'border-top-left-radius',
+					'border-top-right-radius',
+					'border-bottom-right-radius',
+					'border-bottom-left-radius',
+				]
+			},
+			{
+				order: 'strict',
+				properties: [
+					'font',
+					'line-height',
+					'font-family',
+					'font-weight',
+					'font-style',
+					'font-size',
+					'color',
 				]
 			},
 			{
 				order: 'strict',
 				properties: [
 					'direction',
-					'line-height',
-					'font',
-					'font-family',
-					'font-weight',
-					'font-style',
-					'font-size',
 					'text-align',
 					'text-transform',
 					'text-decoration',
-					'word-wrap'
+				]
+			},
+			{
+				order: 'strict',
+				properties: [
+					'word-break',
+					'word-wrap',
 				]
 			},
 			{
@@ -151,45 +204,54 @@ module.exports = {
 					'background-image',
 					'background-position',
 					'background-repeat',
-					'background-size'
+					'background-size',
+					'object-fit',
 				]
 			},
-			'color',
 			{
 				order: 'strict',
 				properties: [
-					'border-radius',
-					'border-top-right-radius',
-					'border-bottom-right-radius',
-					'border-bottom-left-radius',
-					'border-top-right-radius'
+					'box-shadow',
 				]
 			},
-			'box-shadow',
 			{
 				order: 'strict',
 				properties: [
 					'list-style',
 					'list-style-type',
 					'list-style-position',
-					'list-style-image'
+					'list-style-image',
 				]
 			},
-			'transition',
-			'animation',
-			'opacity',
-			'visibility',
-			'object-fit',
+			{
+				order: 'strict',
+				properties: [
+					'transition',
+					'animation',
+				]
+			},
+			{
+				order: 'strict',
+				properties: [
+					'opacity',
+					'visibility',
+				]
+			},
 			{
 				order: 'strict',
 				properties: [
 					'overflow',
 					'overflow-x',
-					'overflow-y'
+					'overflow-y',
 				]
 			},
-			'cursor',
-			'pointer-events'
+			{
+				order: 'strict',
+				properties: [
+					'cursor',
+					'pointer-events',
+				]
+			},
 		],
 		{
 			unspecified: 'bottom'

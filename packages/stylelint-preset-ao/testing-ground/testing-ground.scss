@@ -1,104 +1,17 @@
-# AO.com - SCSS Style Guide
+@keyframes slidein {
+	0% {
+		transform: scaleX(0);
+	}
 
-> Our view on SCSS formatting.
+	50% {
+		transform: scaleX(0.5);
+	}
 
-
-## Syntax
-
-Here at AO we utilise the `.scss` syntax to write SASS.
-
-Example:
-
-```scss
-.class-selector {
-	// properties
-
-	.class-selector__child {
-		// properties
+	100% {
+		transform: scaleX(1);
 	}
 }
 
-```
-
-## Formatting
-
-- Use tabs for indentation, do not use spaces.
-- For selectors:
-	- Use kebab-case.
-	- BEM syntax is allowed.
-	- Never use camelCase for class selectors.
-	- Avoid using IDs as selectors.
-- If possible, add classes to elements.
-	- Try not to target specific elements e.g. `a`, `p`, `li` etc.
-- Specifics:
-	- Insert a space before the opening brace ` {` in rule declarations.
-	- Closing braces `}` of rule declarations should be on a new line.
-	- When declaring properties, put a space after but not before the `: ` character.
-	- Insert blank lines between rule declarations.
-
-
-### Classname Selectors
-
-```scss
-.class-selector {
-	// properties
-}
-
-.parent-class__with-child-class--and-modifier {
-	// properties
-}
-```
-
-
-### ID Selectors
-
-Although we discourage the use of IDs as selectors, if absolutely necessary they should be declared using the same pattern as classnames.
-
-```scss
-#id-selector {
-	// properties
-}
-```
-
-
-## Nested Selectors
-
-**Selectors should not be nested more than three levels deep!**
-
-```scss
-.parent {
-	.child {
-		.gran-child {
-			// thats enough ;)
-
-			&::before {
-				// pseudo elements don't count towards nesting depth
-			}
-		}
-	}
-}
-```
-
-
-## @Extends
-
-Placeholders should be extended before any property declarations.
-
-```scss
-.class-selector {
-	@extend %header-main;
-
-	color: #7fba23;
-}
-```
-
-## Property declaration order
-
-Properties are ordered both by groups and in a certain order within each group.
-
-See below for a comprehensive list. Any properties not listed should be declared at the bottom.
-
-```scss
 .class-selector {
 	// mixins and extensions
 	@include function(arg);
@@ -334,8 +247,3 @@ See below for a comprehensive list. Any properties not listed should be declared
 		// properties
 	}
 }
-```
-
-## Property rules
-
-- Hex colours should be at least 6 digits long and use lowercase letters.
