@@ -17,6 +17,10 @@ npm info "stylelint-preset-ao@latest" peerDependencies
 **.stylelintrc**
 ```json
 {
-  "extends": "stylelint-preset-ao"
+  "extends": "stylelint-preset-ao",
+	"ignoreFiles": [
+		"**/*.js",
+		"**/*.jsx"
+	]
 }
 ```
