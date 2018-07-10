@@ -1,5 +1,5 @@
 # AO Stylelint Preset
-> Stylelint preset representing the [AO.com SCSS Style Guide](../style-guide/README.md)
+> Stylelint preset representing the [AO.com SCSS Style Guide](../../style-guide/README.md)
 
 ## Install
 ### Preset
