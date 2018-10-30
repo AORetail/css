@@ -13,15 +13,14 @@
 }
 
 .class-selector {
-	// mixins and extensions
-	@include function(arg);
 	@extend %placeholder;
 
 	// content
 	content: '';
 
 	// display
-	display: block | flex | grid | inline | inline-block | inline-flex | inline-grid | table | table-cell;
+	display: block | flex | grid | inline | inline-block | inline-flex |
+		inline-grid | table | table-cell;
 
 	// flex properties
 	flex-flow: column wrap;
@@ -148,7 +147,10 @@
 	background: url('../img/nicholas-cage.jpg') no-repeat bottom right #7fba23;
 	background-color: #7fba23;
 	background-image: url('../img/nicholas-cage.jpg');
-	background-image: image-set(url('../img/nicholas-cage.jpg') 1x, url('../img/nicholas-cage_2x.jpg') 2x);
+	background-image: image-set(
+		url('../img/nicholas-cage.jpg') 1x,
+		url('../img/nicholas-cage_2x.jpg') 2x
+	);
 	background-position: top left;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -179,6 +181,8 @@
 	// mouse properties
 	cursor: pointer;
 	pointer-events: none;
+	// mixins and extensions
+	@include function(arg);
 
 	// psuedo selectors
 	&:hover {
@@ -225,11 +229,11 @@
 		// properties
 	}
 
-	&:nth-child(4n+1) {
+	&:nth-child(4n + 1) {
 		// properties
 	}
 
-	&:nth-of-type(4n+1) {
+	&:nth-of-type(4n + 1) {
 		// properties
 	}
 

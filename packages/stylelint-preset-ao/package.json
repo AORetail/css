@@ -1,6 +1,6 @@
 {
   "name": "stylelint-preset-ao",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "AO stylelint preset",
   "main": "index.js",
   "files": [

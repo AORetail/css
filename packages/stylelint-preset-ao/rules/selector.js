@@ -7,7 +7,7 @@ module.exports = {
 	'selector-combinator-space-after': 'always',
 	'selector-combinator-space-before': 'always',
 	'selector-descendant-combinator-no-non-space': true,
-	'selector-list-comma-newline-after': 'never-multi-line',
+	// 'selector-list-comma-newline-after': 'never-multi-line',
 	'selector-list-comma-space-before': 'never',
 	'selector-max-empty-lines': 0,
 	'selector-max-compound-selectors': 3,
