@@ -1,7 +1,13 @@
 {
   "name": "stylelint-preset-ao",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "AO stylelint preset",
+  "author": "James Almond",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AORetail/css.git"
+  },
   "main": "index.js",
   "files": [
     "index.js",
@@ -17,11 +23,6 @@
     "scss",
     "css"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/AORetail/css.git"
-  },
-  "license": "MIT",
   "devDependencies": {
     "eslint": "^4.7.1",
     "eslint-config-ao": "^0.0.1-rc.1"
